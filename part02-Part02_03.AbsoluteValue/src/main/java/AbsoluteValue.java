@@ -10,8 +10,9 @@ public class AbsoluteValue {
 
         if (number < 0) {
             System.out.println(number * -1);
-        } else
+        } else {
             System.out.println(number);
+        }
 
     }
 }
