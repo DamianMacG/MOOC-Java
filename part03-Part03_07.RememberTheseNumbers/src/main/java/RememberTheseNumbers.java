@@ -6,6 +6,7 @@ public class RememberTheseNumbers {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        int num = 0;
 
         ArrayList<Integer> numbers = new ArrayList<>();
         while (true) {
@@ -15,6 +16,9 @@ public class RememberTheseNumbers {
             }
 
             numbers.add(luku);
+
+            System.out.println(numbers.get(num));
+            num++;
         }
 
     }
