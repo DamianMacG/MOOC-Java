@@ -7,4 +7,17 @@ public class Sum {
         // Try your method here
     }
 
+    public static int sum(ArrayList<Integer> numbers) {
+        if (numbers.size() == 0) {
+            return -1;
+        }
+
+        int sum = 0;
+        for (int number : numbers) {
+            sum = sum + number;
+        }
+
+        return sum;
+    }
+
 }
