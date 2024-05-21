@@ -22,9 +22,13 @@ public class PaymentCard {
     }
 
     public void addMoney(double amount) {
-        balance += amount;
-        if (balance > 150) {
-            balance = 150.0;
+        if (amount < 0) {
+            balance += 0;
+        } else if (amount > 0) {
+            balance += amount;
+            if (balance > 150) {
+                balance = 150.0;
+            }
         }
     }
 }
