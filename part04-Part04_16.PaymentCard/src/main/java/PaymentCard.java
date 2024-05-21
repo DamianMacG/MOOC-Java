@@ -10,10 +10,14 @@ public class PaymentCard {
     }
 
     public void eatAffordably() {
-        balance -= 2.6;
+        if (balance >= 2.6) {
+            balance -= 2.6;
+        }
     }
 
     public void eatHeartily() {
-        balance -= 4.6;
+        if (balance >= 4.6) {
+            balance -= 4.6;
+        }
     }
 }
