@@ -28,16 +28,17 @@ public class StoringRecords {
 
         Path filename = Paths.get(file);
 
-        try {
-            ArrayList<String> lines = new ArrayList<>(Files.readAllLines(filename));
-            for (int i = 0; i < lines.size(); i++) {
-                String[] parts = lines.get(i).split(",");
+        try (Scanner fileReader = new Scanner(filename)) {
+            while (fileReader.hasNextLine()) {
+                String line = fileReader.nextLine();
+                String[] parts = line.split(",");
+
                 String name = parts[0];
-                int age = Integer.parseInt(parts[1]);
+                int age = Integer.valueOf(parts[1]);
                 persons.add(new Person(name, age));
             }
-        } catch (IOException e) {
-            System.out.println("Reading the file " + file + " failed.");
+        } catch (Exception e) {
+            System.out.println("Could not read the specified file.");
         }
         return persons;
 
