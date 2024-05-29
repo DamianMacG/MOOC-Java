@@ -1,4 +1,7 @@
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -12,7 +15,14 @@ public class GuestListFromAFile {
         String file = scanner.nextLine();
 
         ArrayList<String> list = new ArrayList<>();
-        // implement reading the file here.
+
+        Path filename = Paths.get(file);
+
+        try {
+            list.addAll(Files.readAllLines(filename));
+        } catch (IOException e) {
+            System.out.println("An error occurred while reading the file: " + e.getMessage());
+        }
         System.out.println("");
 
         System.out.println("Enter names, an empty line quits.");
