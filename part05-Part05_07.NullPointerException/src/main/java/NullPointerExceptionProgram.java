@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class NullPointerExceptionProgram {
 
     public static void main(String[] args) {
-        // Implement a program, or modify a program so, that it causes 
+        // Implement a program, or modify a program so, that it causes
         // the NullPointerException -error
 
         ArrayList<String> lines = new ArrayList<>();
@@ -20,6 +20,9 @@ public class NullPointerExceptionProgram {
             System.out.println(lines.get(index));
             index++;
         }
+
+        lines = null;
+        lines.add("Hello");
 
     }
 }
