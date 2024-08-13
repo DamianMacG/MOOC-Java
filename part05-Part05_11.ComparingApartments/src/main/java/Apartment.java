@@ -29,4 +29,12 @@ public class Apartment {
 
     }
 
+    public boolean moreExpensiveThan(Apartment compared) {
+        if (compared.princePerSquare * compared.squares > princePerSquare * squares) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
 }
