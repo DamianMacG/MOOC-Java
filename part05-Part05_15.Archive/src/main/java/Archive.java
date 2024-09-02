@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Archive {
     private String identifier;
     private String name;
@@ -13,6 +15,18 @@ public class Archive {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Archive archive = (Archive) obj;
+        return Objects.equals(identifier, archive.identifier);
     }
 
     @Override
